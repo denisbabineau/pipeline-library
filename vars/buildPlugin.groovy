@@ -30,7 +30,7 @@ def call(Map params = [:]) {
         String javaLevel = config.javaLevel
 
         String stageIdentifier = "${label}-${jdk}${jenkinsVersion ? '-' + jenkinsVersion : ''}"
-        boolean first = tasks.size() == 1
+        boolean first = false // DISABLE tasks.size() == 1
         boolean skipTests = params?.tests?.skip
         boolean addToolEnv = !useAci
 
